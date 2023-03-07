@@ -10,16 +10,16 @@ public class GameView {
     private Scene scene;
     private Label label;
 
-    public GameView() {
+    public GameView( ) {
         this.label = new Label("My Label");
         this.label.setFont(new Font("Arial", 30));
         this.scene = new Scene(label, 200, 100);
 
-        addClickManagement();
+        //was: addClickManagement();
 
     }
 
-
+/*
     private void addClickManagement(){
         EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
             @Override
@@ -29,6 +29,11 @@ public class GameView {
                 System.out.println("clicked");
             }
         };
+        scene.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
+    }
+ */
+
+    public void addClickManagement(EventHandler<MouseEvent> eventHandler ){
         scene.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
     }
     Scene getScene(){
