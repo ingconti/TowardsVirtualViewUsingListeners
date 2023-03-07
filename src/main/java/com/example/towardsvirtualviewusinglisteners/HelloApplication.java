@@ -5,12 +5,12 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
 public class HelloApplication extends Application {
+
+    private View view;
 
     @Override
     public void start(Stage primaryStage) {
@@ -22,9 +22,11 @@ public class HelloApplication extends Application {
 
         // rendering:
         root.getChildren().add(canvas);
-        //addButtonTo(root);
 
-        primaryStage.setScene(new Scene(root));
+        //was: primaryStage.setScene(new Scene(root));
+        this.view = new View();
+        primaryStage.setScene(this.view.getScene());
+
         primaryStage.show();
     }
 
