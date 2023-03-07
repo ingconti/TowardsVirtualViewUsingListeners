@@ -6,11 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 
-public class View {
+public class GameView {
     private Scene scene;
     private Label label;
 
-    public View() {
+    public GameView() {
         this.label = new Label("My Label");
         this.label.setFont(new Font("Arial", 30));
         this.scene = new Scene(label, 200, 100);
